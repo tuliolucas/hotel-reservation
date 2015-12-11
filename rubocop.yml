@@ -1,0 +1,8 @@
+AllCops:
+    Exclude:
+        - '.bundle/**/*'
+        - 'vendor/**/*'
+Metrics/LineLength:
+Max: 120
+Style/IndentHash:
+Enabled: false
