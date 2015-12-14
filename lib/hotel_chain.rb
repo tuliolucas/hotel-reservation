@@ -15,9 +15,9 @@ class HotelChain
       dates.each do |date|
         total_price += hotel.price(is_normal_rate, date)
       end
-      map[hotel.name] = total_price
+      map[hotel] = total_price
     end
-    puts(map.keys)
+    map = map.sort_by { |k, v| [v, -k.rating] }
     map.first[0]
   end
 end

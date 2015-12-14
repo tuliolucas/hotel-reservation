@@ -5,9 +5,9 @@ require_relative '../lib/hotel_chain'
 describe HotelChain do
   subject do
     hotels = [
-      Hotel.new('Lakewood', '3'),
-      Hotel.new('Bridgewood', '4'),
-      Hotel.new('Ridgewood', '5')
+      Hotel.new('Lakewood', 3),
+      Hotel.new('Bridgewood', 4),
+      Hotel.new('Ridgewood', 5)
     ]
     hotels[0].normal_rate = Rates.new(110, 90)
     hotels[0].reward_rate = Rates.new(80, 80)
@@ -26,11 +26,11 @@ describe HotelChain do
   end
   it 'should existing hotels have their differents rates' do
     lakewood = subject.hotels[0]
-    expect(lakewood.rating).to eq('3')
+    expect(lakewood.rating).to eq(3)
     bridgewood = subject.hotels[1]
-    expect(bridgewood.rating).to eq('4')
+    expect(bridgewood.rating).to eq(4)
     ridgewood = subject.hotels[2]
-    expect(ridgewood.rating).to eq('5')
+    expect(ridgewood.rating).to eq(5)
   end
   it 'should find the cheapest hotel for normal customer' do
     dates = ['16Mar2009(mon)', '17Mar2009(tues)', '18Mar2009(wed)']
