@@ -36,6 +36,9 @@ describe HotelChain do
     dates = ['16Mar2009(mon)', '17Mar2009(tues)', '18Mar2009(wed)']
     hotel = subject.find_cheapest_hotel(true, dates)
     expect(hotel.name).to eq('Lakewood')
+    dates = ['20Mar2009(fri)', '21Mar2009(sat)', '22Mar2009(sun)']
+    hotel = subject.find_cheapest_hotel(true, dates)
+    expect(hotel.name).to eq('Bridgewood')
   end
   it 'should find the cheapest hotel for special customer' do
     dates = ['26Mar2009(thur)', '27Mar2009(fri)', '28Mar2009(sat)']
